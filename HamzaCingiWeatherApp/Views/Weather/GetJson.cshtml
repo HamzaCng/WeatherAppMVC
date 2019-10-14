@@ -1,0 +1,44 @@
+﻿@model HamzaCingiWeatherApp.Models.Weather
+
+@{
+    ViewBag.Title = "Get Json";
+}
+
+<h2>GetJson</h2>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Json</title>   
+</head>
+<body>
+    <div>
+        <input type="button" id="btnJsonResult" value="Json Result" />
+    </div>
+    <script>
+
+        $(function () {
+
+            $("#btnJsonResult").click(
+                function () {
+
+                    $.ajax({
+
+                        type: "GET",
+                        url: "/Weather/JsonData",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function () {
+                            alert("Json Verilerini Network başlığı altında görebilirsiniz.");
+                        }
+
+                    })
+                }
+             );
+
+        });
+
+    </script>
+</body>
+</html>
